@@ -149,22 +149,25 @@ def find(url):
             return 'none'
 
 def hi():
-    response = requests.get('https://uhdmovies.actor/')
-
-    # Get the HTML content from the response
-    html_content = response.text
-
-    # Create a BeautifulSoup object to parse the HTML
-    soup = BeautifulSoup(html_content, 'html.parser')
-    # Find all the page number elements
-    page_numbers = soup.find_all('a', class_='page-numbers')
-
-    # Extract page numbers as integers
-    page_numbers = [int(page.get_text()) for page in page_numbers if page.get_text().isdigit()]
-
-    # Find the highest page number
-    highest_page_number = max(page_numbers)
-    return highest_page_number
+    try:
+        response = requests.get('https://uhdmovies.actor/')
+    
+        # Get the HTML content from the response
+        html_content = response.text
+    
+        # Create a BeautifulSoup object to parse the HTML
+        soup = BeautifulSoup(html_content, 'html.parser')
+        # Find all the page number elements
+        page_numbers = soup.find_all('a', class_='page-numbers')
+    
+        # Extract page numbers as integers
+        page_numbers = [int(page.get_text()) for page in page_numbers if page.get_text().isdigit()]
+    
+        # Find the highest page number
+        highest_page_number = max(page_numbers)
+        return highest_page_number
+    except:
+        return 'Error'
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html', meta = meta,), 404
