@@ -33,7 +33,7 @@ meta = """
 """
 
 def get(url):
-    response = requests.get(f'https://uhdmovies.ink/{url}')
+    response = requests.get(f'https://uhdmovies.actor/{url}')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -43,7 +43,7 @@ def get(url):
     whole = soup.find('article', class_='gridlove-box')
     return whole
 def find(url):
-    response = requests.get(f'https://uhdmovies.ink/{url}')
+    response = requests.get(f'https://uhdmovies.actor/{url}')
 
 
     # Get the HTML content from the response
@@ -149,7 +149,7 @@ def find(url):
             return 'none'
 
 def hi():
-    response = requests.get('https://uhdmovies.ink/')
+    response = requests.get('https://uhdmovies.actor/')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -170,7 +170,7 @@ def page_not_found(e):
     return render_template('404.html', meta = meta,), 404
 @app.route('/1')
 def one():
-    response = requests.get('https://uhdmovies.ink/')
+    response = requests.get('https://uhdmovies.actor/')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -205,7 +205,7 @@ def one():
         link_element = article.find('a', title=title_text)
         link_url = link_element['href'] if link_element else "Link not found"
         # link_url = link
-        link_url = link_url.replace('https://uhdmovies.ink', '')
+        link_url = link_url.replace('https://uhdmovies.actor', '')
         link_url = link_url.rstrip('/')
         # Extract the thumbnail URL
         thumbnail_element = article.find('img', class_='attachment-gridlove-a3-orig')
@@ -248,7 +248,7 @@ def one():
     return raw
 @app.route('/hd-m')
 def hdm():
-    response = requests.get('https://uhdmovies.ink/1080p-10bit/')
+    response = requests.get('https://uhdmovies.actor/1080p-10bit/')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -269,7 +269,7 @@ def hdm():
         # Extract the link
         link_element = article.find('a', title=title_text)
         link_url = link_element['href'] if link_element else "Link not found"
-        link_url = link_url.replace('https://uhdmovies.ink', '')
+        link_url = link_url.replace('https://uhdmovies.actor', '')
         link_url = link_url.rstrip('/')
         
 
@@ -313,7 +313,7 @@ def hdm():
     return raw
 @app.route('/4k-m')
 def km4():
-    response = requests.get('https://uhdmovies.ink/4k-hdr/')
+    response = requests.get('https://uhdmovies.actor/4k-hdr/')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -341,7 +341,7 @@ def km4():
         link = link_url
         # link_element = article.find('a', title=title_text)
         # link_url = link_element['href'] if link_element else "Link not found"
-        link_url = link_url.replace('https://uhdmovies.ink', '')
+        link_url = link_url.replace('https://uhdmovies.actor', '')
         link_url = link_url.rstrip('/')
         
 
@@ -385,7 +385,7 @@ def km4():
     return raw
 @app.route('/eng-m')
 def engm():
-    response = requests.get('https://uhdmovies.ink/movies/english-movies/')
+    response = requests.get('https://uhdmovies.actor/movies/english-movies/')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -406,7 +406,7 @@ def engm():
         # Extract the link
         link_element = article.find('a', title=title_text)
         link_url = link_element['href'] if link_element else "Link not found"
-        link_url = link_url.replace('https://uhdmovies.ink', '')
+        link_url = link_url.replace('https://uhdmovies.actor', '')
         link_url = link_url.rstrip('/')
         
 
@@ -472,7 +472,7 @@ def no(no):
     return render_template('index.html', meta = meta,num = num, page = no, pre = f'/page/{pre}',next1 = f'/page/{next1}')
 @app.route('/ft/<no>/')
 def ft(no):
-    response = requests.get(f'https://uhdmovies.ink/page/{no}/')
+    response = requests.get(f'https://uhdmovies.actor/page/{no}/')
     # Get the HTML content from the response
     html_content = response.text
 
@@ -492,7 +492,7 @@ def ft(no):
         # Extract the link
         link_element = article.find('a', title=title_text)
         link_url = link_element['href'] if link_element else "Link not found"
-        link_url = link_url.replace('https://uhdmovies.ink', '')
+        link_url = link_url.replace('https://uhdmovies.actor', '')
         link_url = link_url.rstrip('/')
         
 
@@ -572,7 +572,7 @@ def movie(mo):
 @app.route('/search', methods=['GET'])
 def search():
     q = request.args.get('q')
-    response = requests.get(f'https://uhdmovies.ink/?s={q}')
+    response = requests.get(f'https://uhdmovies.actor/?s={q}')
 
     # Get the HTML content from the response
     html_content = response.text
@@ -606,7 +606,7 @@ def search():
         link_element = article.find('a', title=title_text)
         link_url = link_element['href'] if link_element else "Link not found"
         # link_url = link
-        link_url = link_url.replace('https://uhdmovies.ink', '')
+        link_url = link_url.replace('https://uhdmovies.actor', '')
         link_url = link_url.rstrip('/')
         # Extract the thumbnail URL
         thumbnail_element = article.find('img', class_='attachment-gridlove-a3-orig')
@@ -653,7 +653,7 @@ def feed():
 
 @app.route('/sitemap.xml')
 def sitemap():
-    url = "https://uhdmovies.ink/post-sitemap.xml"
+    url = "https://uhdmovies.actor/post-sitemap.xml"
 
     # Send a POST request
     response = requests.post(url)
@@ -661,8 +661,8 @@ def sitemap():
     # Check if the request was successful (status code 200)
     if response.status_code == 200:
         xml_text = response.text
-        xml_text = xml_text.replace('<loc>https://uhdmovies.ink/</loc>', '<loc>https://uhdmovies.naradai.co/</loc>')
-        xml_text = xml_text.replace('uhdmovies.ink/', 'uhdmovies.naradai.co/movies/')
+        xml_text = xml_text.replace('<loc>https://uhdmovies.actor/</loc>', '<loc>https://uhdmovies.naradai.co/</loc>')
+        xml_text = xml_text.replace('uhdmovies.actor/', 'uhdmovies.naradai.co/movies/')
         return Response(xml_text, content_type='text/xml')
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
