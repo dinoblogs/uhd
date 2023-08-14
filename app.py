@@ -32,6 +32,8 @@ meta = """
 
 """
 
+
+
 def get(url):
     response = requests.get(f'https://uhdmovies.actor/{url}')
 
@@ -191,8 +193,33 @@ def one():
     # Find all the article elements
     article_elements = soup.find_all('article', class_='gridlove-post')
     # Loop through each article and extract information
+ 
 
-    raw = ''
+    raw = '''
+    <div class="col-md-3 col-6" onclick="window.location = '/gadar2'">
+            <div class="trend_2im clearfix position-relative">
+            <div class="trend_2im1 clearfix">
+                <div class="grid">
+            <figure class="effect-jazz mb-0">
+                <a href="/gadar2"><img src="/static/image/gadar-2-poster-2.jpg" class="w-100" alt="img25"></a>
+            </figure>
+        </div>
+            </div>
+            
+            </div>
+            <div class="trend_2ilast bg_grey p-3 clearfix">
+                <h5><a class="col_white" href="/gadar2">Download Gadar 2 (2023) Hindi Movie HDCAM || 480p [560MB] || 720p [1.3GB] || 1080p [2.9GB]</a></h5>
+                <span class="col_red">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            </span>
+            <p class="mb-0">10M Views</p>
+            </div>  
+            </div>
+'''
     links = []
     div_elements = soup.find_all('div', class_='box-inner-p')
     for div in div_elements:
@@ -666,5 +693,85 @@ def sitemap():
         xml_text = xml_text.replace('<loc>https://uhdmovies.actor/</loc>', '<loc>https://uhdmovies.naradai.co/</loc>')
         xml_text = xml_text.replace('uhdmovies.actor/', 'uhdmovies.naradai.co/movies/')
         return Response(xml_text, content_type='text/xml')
+    
+@app.route('/gadar2')
+def gadar():
+
+    link1 = 'https://blogmflix.com/archives/92003'
+    text1 = 'Download Gadar 2 (2023) Hindi Movie 480p [560MB] '
+
+    link2 = 'https://blogmflix.com/archives/91896'
+    text2 = 'Download Gadar 2 (2023) Hindi Movie 720p [1.3GB]'
+
+    link3 = 'https://blogmflix.com/archives/92004'
+    text3 = 'Download Gadar 2 (2023) Hindi Movie 1080p [2.9GB] '
+
+    title = 'Download Gadar 2 (2023) Hindi Movie HDCAM || 480p [560MB] || 720p [1.3GB] || 1080p [2.9GB]'
+
+    description = 'Download Gadar 2 (2023) Hindi Movie in 1080p, 720p ,480p . This is a Bollywood Hindi movie and available in 1080p, 480p, 720p quality. This is a Drama, Action based movie. This movie is released in 2023 in the Hindi language. Click on the Download button below to download this movie. This is the Latest HDCAM with Hindi audio.'
+
+    m = '''
+<article
+    class="gridlove-box box-vm post-12029 post type-post status-publish format-standard has-post-thumbnail hentry category-1080-x264 category-1080p-hevc category-1080p-series category-1080p-uhd category-1080p-x264 category-anime category-anime-series-movie category-web-dl"
+    id="post-12029">
+    <div class="box-inner-p-bigger box-single">
+        <div class="text-center">
+            <div class="entry-header">
+
+                <h1 class="entry-title">Download Gadar 2 (2023) Hindi Movie HDCAM || 480p [560MB] || 720p [1.3GB] ||
+                    1080p [2.9GB]</h1>
+
+            </div>
+        </div>
+        <div class="entry-content">
+            <p>Download Gadar 2 (2023) Hindi Movie in 1080p, 720p ,480p . This is a Bollywood Hindi movie and available
+                in 1080p, 480p, 720p quality. This is a Drama, Action based movie. This movie is released in 2023 in the
+                Hindi language. Click on the Download button below to download this movie. This is the Latest HDCAM with
+                Hindi audio.</p>
+
+            <h2 style="text-align: center;"><span style="color: #0000ff;"><strong>Download Gadar 2 (2023) Hindi
+                        Movie
+                        HDCAM || 480p [560MB] || 720p [1.3GB] || 1080p [2.9GB]</strong></span></h2>
+            <p style="text-align: center;"><img alt="Fire Force (TV Series 2019– ) - IMDb" aria-hidden="false"
+                    class="r48jcc pT0Scc iPVvYb" decoding="async" src="/static/image/gadar-2-poster-2.jpg"></p>
+            <div class="mks_separator" style="border-bottom: 5px solid;"></div><b></b><b> </b>
+            <div id="d1">
+                <p style="text-align: center;"><span style="color: #000000;"><strong>Download Gadar 2 (2023) Hindi Movie
+                            480p [560MB]</strong></span></p>
+                <p style="text-align: center;"><a class="maxbutton-2 maxbutton maxbutton-gdrive-episode btn btn-primary"
+                        data-wpel-link="external" href="https://blogmflix.com/archives/92003"
+                        rel="noreferrer noopener nofollow external" target="_blank"
+                        title="Choose Episode Number to Download" style="margin: 10px;"><span class="mb-text">Download 1</span></a>
+                </p>
+            </div>
+            <div id="d1">
+                <p style="text-align: center;"><span style="color: #000000;"><strong>Download Gadar 2 (2023) Hindi Movie 720p [1.3GB]</strong></span></p>
+                <p style="text-align: center;"><a class="maxbutton-2 maxbutton maxbutton-gdrive-episode btn btn-primary"
+                        data-wpel-link="external" href="https://blogmflix.com/archives/91896"
+                        rel="noreferrer noopener nofollow external" target="_blank"
+                        title="Download" style="margin: 10px;"><span class="mb-text">Download
+                            2</span></a>
+                </p>
+            </div>
+            <div id="d1">
+                <p style="text-align: center;"><span style="color: #000000;"><strong>Download Gadar 2 (2023) Hindi Movie 1080p [2.9GB]</strong></span></p>
+                <p style="text-align: center;"><a class="maxbutton-2 maxbutton maxbutton-gdrive-episode btn btn-primary"
+                        data-wpel-link="external" href="https://blogmflix.com/archives/92004"
+                        rel="noreferrer noopener nofollow external" target="_blank"
+                        title="Download" style="margin: 10px;"><span class="mb-text">Download
+                            3</span></a>
+                </p>
+            </div>
+         
+        </div>
+
+
+    </div>
+
+
+    </div>
+</article>
+'''
+    return render_template('mov2.html', meta = meta, tmt = m)
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
