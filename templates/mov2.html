@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,13 +19,14 @@
         }
 
         img {
-            width: 10cm;
+            width: 6cm;
         }
 
         span {
             color: white !important;
         }
-        .gridlove-cat{
+
+        .gridlove-cat {
             font-size: 20px;
         }
     </style>
@@ -36,7 +37,7 @@
     <link rel="shortcut icon"
         href="https://t4.ftcdn.net/jpg/01/88/76/83/360_F_188768342_tdBgWIUL7Z1xBFosdVZeRCu8j5cAwRTg.jpg"
         type="image/x-icon">
-        {{meta | safe}}
+    {{meta | safe}}
 
 </head>
 
@@ -53,7 +54,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="top_1m">
-                   <form action="#" onsubmit="search()" class="input-group">
+                        <form action="#" onsubmit="search()" class="input-group">
                             <!-- <form action="#" onsubmit="search()"> -->
                             <input type="text" id="search-inp" class="form-control bg-black"
                                 placeholder="Search Site...">
@@ -158,28 +159,47 @@
     <script src="https://kit.fontawesome.com/9eb98cce95.js" crossorigin="anonymous"></script>
     <script src="/static/js/movie.js"></script>
     <script>
-        
-        
+
+
         var title1 = document.querySelector('.entry-title').innerHTML
         document.title = title1
         function search() {
-        
-        try {
-            event.preventDefault();
 
-        } catch (error) {
-            console.log('pass')
-        }
-        inp = document.getElementById('search-inp').value
-        document.title = `You Searched for "${inp}" UHDMovies - 4k Dual Audio Movies, Ultra HD movies, 1080p Movies, 2160 Movies, 2160p Movies, 1080p 60FPS
+            try {
+                event.preventDefault();
+
+            } catch (error) {
+                console.log('pass')
+            }
+            inp = document.getElementById('search-inp').value
+            document.title = `You Searched for "${inp}" UHDMovies - 4k Dual Audio Movies, Ultra HD movies, 1080p Movies, 2160 Movies, 2160p Movies, 1080p 60FPS
     Movies, 4k HEVC Movies, 1080p 10Bit Movies, 1080p x265 Hevc, 4k Bluray Movies, WeB-DL Series, WeB-DL Movies,
     High Quality Audio Movies`
-        movies = document.getElementById('movies')
-        window.history.pushState(null, null, `?q=${inp}`);
-        window.location  = '/?q=' + inp
-    }
+            movies = document.getElementById('movies')
+            window.history.pushState(null, null, `?q=${inp}`);
+            window.location = '/?q=' + inp
+        }
 
+        // Get references to all the image elements on the page
 
+        // Add a resize event listener to the window to check when the viewport width changes
+        window.addEventListener("resize", function () {
+            // Check the current viewport width
+            const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+            // Get a reference to the <html> element
+            const htmlElement = document.documentElement;
+
+            // If the viewport width is less than 423px, apply flex display; otherwise, remove it
+            if (viewportWidth < 423) {
+                htmlElement.style.display = "flex";
+            } else {
+                htmlElement.style.display = ""; // Reset to default display
+            }
+        });
+
+        // Trigger the event once to apply the initial styling based on the viewport width
+        window.dispatchEvent(new Event("resize"));
     </script>
 
 
