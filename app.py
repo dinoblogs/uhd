@@ -151,18 +151,18 @@ def find(url):
 def hi():
     try:
         response = requests.get('https://uhdmovies.actor/')
-    
+
         # Get the HTML content from the response
         html_content = response.text
-    
+
         # Create a BeautifulSoup object to parse the HTML
         soup = BeautifulSoup(html_content, 'html.parser')
         # Find all the page number elements
         page_numbers = soup.find_all('a', class_='page-numbers')
-    
+
         # Extract page numbers as integers
         page_numbers = [int(page.get_text()) for page in page_numbers if page.get_text().isdigit()]
-    
+
         # Find the highest page number
         highest_page_number = max(page_numbers)
         return highest_page_number
@@ -234,8 +234,7 @@ def one():
             
             </div>
             <div class="trend_2ilast bg_grey p-3 clearfix">
-                <h5><a class="col_red" href="/movies{link_url}">Semper</a></h5>
-                <p class="mb-2">{title_text}</p>
+                <h5><a class="col_white" href="/movies{link_url}">{title_text}</a></h5>
                 <span class="col_red">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -243,7 +242,7 @@ def one():
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
             </span>
-            <p class="mb-0">1 Views</p>
+            <p class="mb-0">{round(random.uniform(1.0, 100.0),2)}K Views</p>
             </div>  
             </div>
         """
