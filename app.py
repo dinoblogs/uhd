@@ -298,7 +298,7 @@ def hdm():
             
             </div>
             <div class="trend_2ilast bg_grey p-3 clearfix">
-                <h5><a class="col_red" href="/movies/{link_url}">Semper</a></h5>
+                <h5><a class="col_red" href="/movies/{link_url}">{title_text}</a></h5>
                 <p class="mb-2">{title_text}</p>
                 <span class="col_red">
             <i class="fa fa-star"></i>
@@ -370,7 +370,7 @@ def km4():
             
             </div>
             <div class="trend_2ilast bg_grey p-3 clearfix">
-                <h5><a class="col_red" href="/movies/{link_url}">Semper</a></h5>
+                <h5><a class="col_red" href="/movies/{link_url}">{title_text}</a></h5>
                 <p class="mb-2">{title_text}</p>
                 <span class="col_red">
             <i class="fa fa-star"></i>
@@ -435,7 +435,7 @@ def engm():
             
             </div>
             <div class="trend_2ilast bg_grey p-3 clearfix">
-                <h5><a class="col_red" href="/movies/{link_url}">Semper</a></h5>
+                <h5><a class="col_red" href="/movies/{link_url}">{title_text}</a></h5>
                 <p class="mb-2">{title_text}</p>
                 <span class="col_red">
             <i class="fa fa-star"></i>
@@ -521,7 +521,7 @@ def ft(no):
             
             </div>
             <div class="trend_2ilast bg_grey p-3 clearfix">
-                <h5><a class="col_red" href="/movies/{link_url}">Semper</a></h5>
+                <h5><a class="col_red" href="/movies/{link_url}">{title_text}</a></h5>
                 <p class="mb-2">{title_text}</p>
                 <span class="col_red">
             <i class="fa fa-star"></i>
@@ -634,7 +634,7 @@ def search():
             
             </div>
             <div class="trend_2ilast bg_grey p-3 clearfix">
-                <h5><a class="col_red" href="/movies{link_url}">Semper</a></h5>
+                <h5><a class="col_red" href="/movies{link_url}">{title_text}</a></h5>
                 <p class="mb-2">{title_text}</p>
                 <span class="col_red">
             <i class="fa fa-star"></i>
